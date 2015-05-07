@@ -1,0 +1,7 @@
+## Colored Diff
+sudo apt-get install colordiff
+
+## Enable colordiff
+sudo vim ~/.subversion/config
+Add `diff-cmd = colordiff`
+https://gist.github.com/westonruter/846524

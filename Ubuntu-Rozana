@@ -1,7 +1,0 @@
-* First find out max brightness value
-  cat /sys/class/backlight/acpi_video0/max_brightness
-
-* Adjust Brightness on boot
-sudo gedit /etc/rc.local
-Before exit 0
-echo 0 > /sys/class/backlight/acpi_video0/brightness

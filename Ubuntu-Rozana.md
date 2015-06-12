@@ -16,3 +16,11 @@
 ## List Drives
 
 `sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL`
+.
+---
+## Ubuntu speedtest.cli
+```
+$ wget -O speedtest-cli https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
+$ chmod +x speedtest-cli
+$ ./speedtest-cli
+```

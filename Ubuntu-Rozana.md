@@ -16,7 +16,7 @@
 ## List Drives
 
 `sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL`
-.
+
 ---
 ## Ubuntu speedtest.cli
 ```

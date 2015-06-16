@@ -24,3 +24,7 @@ $ wget -O speedtest-cli https://raw.github.com/sivel/speedtest-cli/master/speedt
 $ chmod +x speedtest-cli
 $ ./speedtest-cli
 ```
+---
+## Ubuntu apt-get proxied
+Conf file `/etc/apt/apt.conf`
+Add : `Acquire::http::Proxy "http://x.x.x.x:8080";`

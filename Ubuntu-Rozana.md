@@ -28,3 +28,26 @@ $ ./speedtest-cli
 ## Ubuntu apt-get proxied
 Conf file `/etc/apt/apt.conf`
 Add : `Acquire::http::Proxy "http://x.x.x.x:8080";`
+---
+## EC2 add swap/increase swap space
+```
+$ sudo mount /dev/xvdb /mnt
+mount: /dev/xvdb already mounted or /mnt busy
+mount: according to mtab, /dev/xvdb is already mounted on /mnt
+$ sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=4096
+4096+0 records in
+4096+0 records out
+4294967296 bytes (4.3 GB) copied, 18.5423 s, 232 MB/s
+$ sudo chown root:root /mnt/swapfile
+$ sudo chmod 600 /mnt/swapfile
+$ sudo mkswap /mnt/swapfile
+Setting up swapspace version 1, size = 4194300 KiB
+no label, UUID=8e8b3d90-7cb2-4c8c-a976-da442582fbb5
+$ sudo swapon /mnt/swapfile
+$ cat /etc/fstab
+$ vim /etc/fstab
+** Add following
+  /dev/xvda2      /mnt    auto    defaults,nobootwait,comment=cloudconfig 0   2
+  /mnt/swapfile swap swap defaults 0 0
+$ sudo swapon -a
+```

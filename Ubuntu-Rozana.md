@@ -51,3 +51,15 @@ $ vim /etc/fstab
   /mnt/swapfile swap swap defaults 0 0
 $ sudo swapon -a
 ```
+
+---
+## Ubuntu telnet test email
+```
+mail from:swapnila@example.com
+rcpt to:secretproject.example@example.io
+data
+subject: Testting email io
+Hello,
+How are you doing?
+```
+

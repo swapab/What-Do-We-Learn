@@ -16,8 +16,7 @@ third_addrs = Set.new
 puts "Parsing File 1 : #{ARGV[0]} "
 # Get a list of memory addresses from the first dump
 File.open(ARGV[0], "r").each_line do |line|
-  p '.'  
-  parsed = JSON.parse(line)
+  parsed = JSON.parse(line) rescue nil
   first_addrs << parsed["address"] if parsed && parsed["address"]
 end
 
@@ -27,8 +26,7 @@ puts "Parsing File 3 : #{ARGV[2]} "
 
 # Get a list of memory addresses from the last dump
 File.open(ARGV[2], "r").each_line do |line|
-  p '.'  
-  parsed = JSON.parse(line)
+  parsed = JSON.parse(line) rescue nil
   third_addrs << parsed["address"] if parsed && parsed["address"]
 end
 
@@ -40,8 +38,7 @@ puts "Parsing File 2 : #{ARGV[1]} "
 # Get a list of all items present in both the second and
 # third dumps but not in the first.
 File.open(ARGV[1], "r").each_line do |line|
-  p '.'
-  parsed = JSON.parse(line)
+  parsed = JSON.parse(line) rescue nil
   if parsed && parsed["address"]
     if !first_addrs.include?(parsed["address"]) && third_addrs.include?(parsed["address"])
       diff << parsed

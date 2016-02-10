@@ -20,3 +20,7 @@ end
 ```
 apt-get --just-print upgrade 2>&1 | perl -ne 'if (/Inst\s([\w,\-,\d,\.,~,:,\+]+)\s\[([\w,\-,\d,\.,~,:,\+]+)\]\s\(([\w,\-,\d,\.,~,‌​:,\+]+)\)? /i) {print "PROGRAM: $1 INSTALLED: $2 AVAILABLE: $3\n"}' | column -s " " -t
 ```
+
+================
+### less grep text in a huge file
+`grep --color=always -i "95539/7fd36a039700" /var/log/apache2/error.log | less -R`

@@ -24,3 +24,13 @@ apt-get --just-print upgrade 2>&1 | perl -ne 'if (/Inst\s([\w,\-,\d,\.,~,:,\+]+)
 ================
 ### less grep text in a huge file
 `grep --color=always -i "95539/7fd36a039700" /var/log/apache2/error.log | less -R`
+
+================
+```
+Siege
+siege -H 'Content-Type: application/json' -g
+
+
+
+siege -H 'Content-Type: application/json' 'https://lemoncodes.bingopulse.com/api/login.json' POST "{'ms_request': {"user": {"api_key":"asasasass", "username":"siddhartha@lemoncodes.com", "password":"asasasasasasa" } } }"
+```

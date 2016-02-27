@@ -34,3 +34,10 @@ siege -H 'Content-Type: application/json' -g
 
 siege -H 'Content-Type: application/json' 'https://lemoncodes.bingopulse.com/api/login.json' POST "{'ms_request': {"user": {"api_key":"asasasass", "username":"siddhartha@lemoncodes.com", "password":"asasasasasasa" } } }"
 ```
+
+================
+Ruby web server
+
+`ruby -run -e httpd -- -p 5000 .`
+
+http://phrogz.net/simplest-possible-ruby-web-server

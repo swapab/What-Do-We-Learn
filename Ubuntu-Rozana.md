@@ -66,7 +66,7 @@ How are you doing?
 ---
 ### Debug CPU utlization
 
-pidstat -u 600 >/var/log/pidstats.log & disown $!
+`pidstat -u 600 >/var/log/pidstats.log & disown $!`
 
 ```
 accton on

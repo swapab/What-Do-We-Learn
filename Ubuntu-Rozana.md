@@ -63,3 +63,14 @@ Hello,
 How are you doing?
 ```
 
+---
+### Debug CPU utlization
+
+pidstat -u 600 >/var/log/pidstats.log & disown $!
+
+```
+accton on
+/var/log/account/pacct
+```
+
+http://serverfault.com/questions/387268/linux-cpu-usage-and-process-execution-history

@@ -45,4 +45,4 @@ http://phrogz.net/simplest-possible-ruby-web-server
 ===============
 Count occuerences of a string in a file.
 
-grep -o 'needle' /var/log/mail.log | wc -l
+`grep -o 'needle' /var/log/mail.log | wc -l`

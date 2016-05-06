@@ -46,3 +46,8 @@ http://phrogz.net/simplest-possible-ruby-web-server
 Count occuerences of a string in a file.
 
 `grep -o 'needle' /var/log/mail.log | wc -l`
+
+
+==============
+RVM
+`rvm --create --ruby-version ruby-1.9.3@my-gemset`

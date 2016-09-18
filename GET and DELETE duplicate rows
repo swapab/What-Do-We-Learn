@@ -1,0 +1,48 @@
+SELECT  p1.id
+  FROM product as p1
+  INNER JOIN (
+      SELECT user_id,product_id,product_type,ordered_on, count(*) as rows
+      FROM product 
+      GROUP BY user_id,product_id,product_type,ordered_on 
+      HAVING count(rows) > 1) as p
+  WHERE p.user_id = p1.user_id and p.product_id = p1.product_id and p.product_type = p1.product_type and p.ordered_on = p1.ordered_on;
+
+  DELETE a
+  FROM product a
+  JOIN (SELECT MAX(t.a1) AS max_a1, t.k1, t.k2, t.k3
+          FROM product t
+      GROUP BY t.k1, t.k2, t.k3
+        HAVING COUNT(*) > 1) b ON b.k1 = a.k1
+                              AND b.k2 = a.k2
+                              AND b.k3 = a.k3
+                              AND b.max_a1 != a.a1
+
+DELETE  a
+FROM    product a
+        LEFT JOIN
+        (
+            SELECT MIN(ID) ID, user_id,product_id,product_type,ordered_on
+            FROM    product
+            GROUP   BY user_id,product_id,product_type,ordered_on
+        ) b ON  a.ID = b.ID AND
+                a.user_id = b.user_id AND
+                a.product_id = b.product_id AND
+                a.product_type = b.product_type AND
+                a.ordered_on = b.ordered_on
+WHERE   b.ID IS NULL
+
+
+DELETE FROM product
+WHERE id NOT IN (
+          SELECT DISTINCT id FROM (
+          SELECT  MAX(id) as id FROM product 
+          GROUP BY user_id,product_id,product_type,ordered_on
+          HAVING COUNT(*) > 1 ) A
+    );
+
+DELETE FROM product  
+WHERE id IN (SELECT * 
+             FROM (SELECT id FROM product 
+                   GROUP BY user_id,product_id,product_type,ordered_on HAVING (COUNT(*) > 1)
+                  ) AS A
+            );

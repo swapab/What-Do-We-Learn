@@ -1,0 +1,4 @@
+Iframe embed in other sites gives 
+SecurityError: Blocked a frame with origin "http://www.xxxx.com" from accessing a cross-origin frame.
+
+http://stackoverflow.com/questions/25098021/securityerror-blocked-a-frame-with-origin-from-accessing-a-cross-origin-frame

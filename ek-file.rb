@@ -1,0 +1,2 @@
+class EkFile
+end

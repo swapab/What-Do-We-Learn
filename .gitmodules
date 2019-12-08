@@ -1,0 +1,3 @@
+[submodule "micro-services/credit-card-transactions"]
+	path = micro-services/credit-card-transactions
+	url = git@github.com:swapab/credit-card-transactions.git
